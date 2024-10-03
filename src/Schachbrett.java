@@ -20,17 +20,17 @@ public class Schachbrett {
         mainFrame.setSize(800, 600);
         mainFrame.setLayout(new GridLayout(8, 8));
 
-        // Schachbrett erzeugen
+        // Schachmuster erzeugen
 
         boolean white = true;
         for (int row = 0; row < 8; row++) {
             for (int col = 0; col < 8; col++) {
                 JPanel square = new JPanel();
                 if (white) {
-                    square.setBackground(Color.WHITE);
+                    square.setBackground(Color.DARK_GRAY);
                 }
                 else {
-                    square.setBackground(Color.BLACK);
+                    square.setBackground(Color.WHITE);
                 }
                 mainFrame.add(square);
                 white = !white;
