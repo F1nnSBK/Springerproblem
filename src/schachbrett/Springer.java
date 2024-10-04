@@ -40,10 +40,10 @@ public class Springer {
         for(int i = 0; i < N; i++) {
             for(int j = 0; j < N; j++) {
                 if (arr[i][j]<10) {
-                    System.out.println(arr[i][j]+"   ");
+                    System.out.printf(arr[i][j]+"   ");
                 }
                 else {
-                    System.out.println(arr[i][j]+"  ");
+                    System.out.printf(arr[i][j]+"  ");
                 }
             }
             System.out.println();
