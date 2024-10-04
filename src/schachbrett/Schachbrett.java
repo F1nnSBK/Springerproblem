@@ -20,7 +20,7 @@ public class Schachbrett extends JPanel {
     public void paintComponent(Graphics g) {
         // Wird für die Schleife des Schachbrettmusters benötigt.
         boolean white = false;
-        // Ruft die paint-Methode der parentclass JPanel auf um es neu zu starten
+        // Ruft die paint-Methode der parent class JPanel auf um es neu zu starten
         super.paintComponent(g);
         // Bestimmt die Größe der Felder basierend auf der Höhe des Fensters
         int size = getHeight() / N;
@@ -50,7 +50,7 @@ public class Schachbrett extends JPanel {
             int x2 = path[i+1][1] * size + size / 2;
             int y2 = path[i+1][0] * size + size / 2;
             /* Zeichnet eine Linie zwischen P1(x1,y1) & P2(x2,y2)
-            *  P1 --> 'i'-tes Feld bis P2 --> 'i+1'-tes Feld */
+            *  P1 --> 'i'-tes Feld bis P2 → 'i+1'-tes Feld */
             g.drawLine(x1, y1, x2, y2);
         }
     }
