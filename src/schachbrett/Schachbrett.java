@@ -1,3 +1,4 @@
+package schachbrett;
 
 import java.awt.*;
 import java.awt.event.WindowAdapter;
@@ -8,15 +9,20 @@ public class Schachbrett {
 
     //private --> nur in dieser Klasse verfügbar
 
-    // Kontruktor Schachbrett() --> ruft Methode launchGUI() auf
+    // Größe des Schachfelds
+    public static final int N = 8;
+
+    // Konstruktor Schachbrett() --> ruft Methode launchGUI() auf
     public Schachbrett() {
         launchGUI();
     }
 
     // main-Methode --> Schachbrett() Konstruktor --> launchGUI() Methode
     public static void main(String[] args) {
-        Schachbrett swingSchachbrett = new Schachbrett();
+        new Schachbrett();
     }
+
+    // Erzeugt die Instanzvariable square des Typs JPanel (JPanel-Objekt)
 
     // private Methode ohne Rückgabewert (void) öffnet die GUI
     private void launchGUI() {
@@ -27,16 +33,16 @@ public class Schachbrett {
         // Größe dieses Fensters
         mainFrame.setSize(800, 600);
         // Setzt das Layout auf "Gridlayout" (AWT Layout Klasse)
-        mainFrame.setLayout(new GridLayout(8, 8));
+        mainFrame.setLayout(new GridLayout(N, N));
 
         // Schachmuster erzeugen
         /*  iteriert über jedes der 64 Felder und prüft, ob das Feld weiß oder nicht weiß ist.
             Ist white wahr, wird das Feld weiß und der Wert der boolean Variable white wird umgekehrt.
             Das nächste Feld ist dann !white und bekommt durch den else Fall die Farbe Weiß.  */
         boolean white = true;
+
         for (int row = 0; row < 8; row++) {
             for (int col = 0; col < 8; col++) {
-                // Erzeugt die Instanzvariable square des Typs JPanel (JPanel-Objekt)
                 JPanel square = new JPanel();
                 if (white) {
                     square.setBackground(Color.WHITE);
@@ -63,3 +69,4 @@ public class Schachbrett {
     }
 
 }
+
