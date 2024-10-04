@@ -1,16 +1,13 @@
 package schachbrett;
 
-import java.util.*;
-import static schachbrett.Schachbrett.N;
-
 public class Springer {
-    // 2D Array als Schachbrett
-    private int[][] board;
+    static int N = Schachbrett.N;
 
     // Konstruktor Springer() --> ruft Methode xx() auf
     public Springer() {
-        board = new int[N][N];
-        System.out.println("Größe des Schachfelds: "+board.length+"x"+board.length);
+        // 2D Array als Schachbrett
+        int[][] board = new int[N][N];
+        System.out.println("Größe des Schachfelds: "+ board.length+"x"+ board.length);
         for(int i=0;i<N;i++) {
             for(int j=0;j<N;j++) {
                 board[i][j] = -1;
