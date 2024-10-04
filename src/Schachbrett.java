@@ -20,7 +20,7 @@ public class Schachbrett {
 
     // private Methode ohne Rückgabewert (void) öffnet die GUI
     private void launchGUI() {
-        // mainFrame Instanzvariable JFrame (JFrame-Objekt) --> Hauptfenster
+        // mainFrame Instanzvariable des Typs JFrame (JFrame-Objekt) --> Hauptfenster
         JFrame mainFrame;
         // Erstellt neue Instanz von JFrame mit dem Titel Schachbrett
         mainFrame = new JFrame("Schachbrett");
