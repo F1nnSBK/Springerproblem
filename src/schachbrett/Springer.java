@@ -2,6 +2,7 @@ package schachbrett;
 
 public class Springer {
     static int N = Schachbrett.N;
+    private static final int[][] path = new int[Schachbrett.N*Schachbrett.N][2];
 
     // Konstruktor Springer() --> ruft Methode xx() auf
     public Springer() {
@@ -16,6 +17,10 @@ public class Springer {
         springerBewegungen(board);
     }
 
+    public int[][] getPath() {
+        return path;
+    }
+
     // main-Methode --> Springer() Konstruktor --> xx() Methode
     public static void main(String[] args) {
         new Springer();
@@ -26,6 +31,8 @@ public class Springer {
         int[] yMoves = {-2,-1,1,2,2,1,-1,-2};
 
         board[0][0] = 0;
+        path[0][0] = 0;
+        path[0][1] = 0;
 
         if(springerBewegungUtil(board, xMoves, yMoves, 0, 0, 1)) {
             springerLoesung(board);
@@ -65,6 +72,8 @@ public class Springer {
 
             if(isValid(board, x, y)) {
                 board[x][y] = moveCount;
+                path[moveCount][0] = x;
+                path[moveCount][1] = y;
 
                 if(springerBewegungUtil(board, xMoves, yMoves, x, y, moveCount+1)) {
                     return true;
