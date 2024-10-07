@@ -3,12 +3,27 @@ package schachbrett;
 import java.awt.*;
 import javax.swing.*;
 
+/**
+ * Dieses Programm erzeugt ein Schachbrett und zeichnet die Bewegungen des Springers aus der
+ * <a href="Springer.java">Springer.java</a>
+ *
+ * @author Finn Hertsch
+ * @version 1.0.0
+ */
+
 public class Schachbrett extends JPanel {
     // N als Variable der Schachfeldgröße
     public static final int N = 8;
     // Pfad path als 2D Array um die Reihenfolge der Schritte des Springers zu speichern
     private final int[][] path;
-    // Konstruktor zur Initialisierung des Schachbrett-Objekts
+
+    /**
+     * Diese Methode dient als Konstruktor
+     * Sie setzt die path Instanzvariable auf das 2D Array path und
+     * regelt die Größe des Fensters, welches das Schachbrett und den Pfad des Springers enthält.
+     *
+     * @param path 2D path Array speichert die x und y-Koordinaten des Springers
+     */
     public Schachbrett(int[][] path) {
         // path Instanzvariable wird auf path 2D Array übergeben
         this.path = path;
@@ -16,7 +31,17 @@ public class Schachbrett extends JPanel {
         this.setPreferredSize(new Dimension(800, 800));
     }
 
-    // nutzt die paintComponent Methode von JPanel um das Schachbrett und den Pfad des Springers zu zeichnen
+    /**
+     * Überschreibt die paintComponent Methode des swing Packets
+     * Zeichnet das Schachfeld mit der Hilfe einer for-Schleife und
+     * passt dieses an die Größe des Fensters an, wenn sich diese verändert.
+     * <p></p>
+     * Zeichnet den Pfad des Springers in Rot in das Schachfeld, indem immer die Mitte des aktuellen und des
+     * nächsten Felds verbunden werden.
+     *
+     * @param g the <code>Graphics</code> object to protect
+     */
+    @Override
     public void paintComponent(Graphics g) {
         // Wird für die Schleife des Schachbrettmusters benötigt.
         boolean white = false;
@@ -55,6 +80,17 @@ public class Schachbrett extends JPanel {
         }
     }
 
+
+    /**
+     * Main Methode, welche das Programm ausführbar macht.
+     * Importiert das 2D path Array aus der <a href="Springer.java">Springer Klasse</a> und
+     * setzt eine Instanzvariable frame des Objekts JFrame mit dem Titel "Schachbrett".
+     * Gibt das path Array weiter und setzt das Fenster aus Schachbrett und Pfad zusammen und
+     * regelt das Schließverhalten.
+     *
+     * @param args erklärt, dass es sich in der Methode um die Commandline Argumente handelt, welche beim
+     *             Starten des Programms ausgeführt werden.
+     */
     public static void main(String[] args) {
         // importiert den path mit den Schritten des Springers aus der Springer() Klasse
         int[][] path = new Springer().getPath();
