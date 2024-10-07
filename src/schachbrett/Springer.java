@@ -105,6 +105,7 @@ public class Springer {
                 else {
                     // Wenn der nächste Schritt nicht gültig ist, wird ein Schritt zurückgegangen (Backtracking)
                     board[x][y] = -1;
+                    System.out.println("Ich bin falsch gelaufen" );
                 }
             }
         }
