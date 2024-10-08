@@ -15,6 +15,7 @@ public class Springer {
     static int N = Schachbrett.N;
     // Erstellt das 2D path Array basierend auf der Schachbrettgröße
     private static final int[][] path = new int[Schachbrett.N*Schachbrett.N][2];
+    static int counter = 0;
 
     /**
      * Dient als Konstruktor
@@ -80,6 +81,8 @@ public class Springer {
         if(springerBewegungUtil(board, xMoves, yMoves, 0, 0, 1)) {
             // Wenn springerBewegungUtil eine Lösung findet, wird diese and springerLoesung() weitergegeben
             springerLoesung(board);
+
+            
             System.out.println("Lösung gefunden");
         }
         else {
@@ -169,7 +172,11 @@ public class Springer {
                 else {
                     // Wenn der nächste Schritt nicht gültig ist, wird ein Schritt zurückgegangen (Backtracking)
                     board[x][y] = -1;
-                    System.out.println("Ich bin falsch gelaufen" );
+
+                    if (moveCount < (N*N)-1) {
+                        System.out.println("Ich bin falsch gelaufen " + counter);
+                        counter = counter + 1;
+                    }
                 }
             }
         }
