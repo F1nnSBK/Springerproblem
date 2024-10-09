@@ -13,7 +13,7 @@ import javax.swing.*;
 
 public class Schachbrett extends JPanel {
     // N als Variable der Schachfeldgröße
-    public static final int N = 9;
+    public static final int N = 8;
     // Pfad path als 2D Array um die Reihenfolge der Schritte des Springers zu speichern
     private final int[][] path;
 
@@ -62,7 +62,7 @@ public class Schachbrett extends JPanel {
                 // Zeichnet das Schachbrett basierend auf der Größe des Fensters
                 g.fillRect(col * size, row * size, size, size);
             }
-            white = !white;
+            if ((N % 2) == 0) white = !white;
         }
 
         // Zeichnet den Pfad des Springers für alle Schritte 0-63
@@ -94,17 +94,22 @@ public class Schachbrett extends JPanel {
     public static void main(String[] args) {
         // importiert den path mit den Schritten des Springers aus der Springer() Klasse
         int[][] path = new Springer().getPath();
-        // Erstellt das Hauptfenster mit dem Titel Schachbrett
-        JFrame fenster = new JFrame("Schachbrett");
-        // Übergibt das pathArray an den Konstruktor
-        Schachbrett board = new Schachbrett(path);
-        // Fügt das Schachbrett dem Fenster zu
-        fenster.getContentPane().add(board);
-        // Passt die Größe des Fensters auf Basis der bevorzugten Größe aus dem Konstruktor an
-        fenster.pack();
-        // Regelt das Verhalten beim Schließen des Fensters
-        fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // Verhindert das automatische Schließen des Fensters und lässt es sichtbar
-        fenster.setVisible(true);
+        if (path[0][0] < 0) {
+            System.out.println("Kein Schachbrett für keine Lösung");
+        }
+        else {
+            // Erstellt das Hauptfenster mit dem Titel Schachbrett
+            JFrame fenster = new JFrame("Schachbrett");
+            // Übergibt das pathArray an den Konstruktor
+            Schachbrett board = new Schachbrett(path);
+            // Fügt das Schachbrett dem Fenster zu
+            fenster.getContentPane().add(board);
+            // Passt die Größe des Fensters auf Basis der bevorzugten Größe aus dem Konstruktor an
+            fenster.pack();
+            // Regelt das Verhalten beim Schließen des Fensters
+            fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            // Verhindert das automatische Schließen des Fensters und lässt es sichtbar
+            fenster.setVisible(true);
+        }
     }
 }

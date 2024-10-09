@@ -86,6 +86,7 @@ public class Springer {
             System.out.println("Lösung gefunden");
         }
         else {
+            path[0][0] = -1;
             System.out.println("Keine Lösung gefunden");
         }
     }
