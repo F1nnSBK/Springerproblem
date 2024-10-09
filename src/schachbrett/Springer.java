@@ -151,7 +151,8 @@ public class Springer {
         }
         // Variablen für die neuen Positionen des Springers
         int x,y;
-        for(int i=0;i<N;i++) {
+        for(int i=0;i<xMoves.length;i++) {
+
             // Berechnet die nächsten möglichen Züge
             x = row + xMoves[i];
             y = col + yMoves[i];

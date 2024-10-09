@@ -13,7 +13,7 @@ import javax.swing.*;
 
 public class Schachbrett extends JPanel {
     // N als Variable der Schachfeldgröße
-    public static final int N = 8;
+    public static final int N = 9;
     // Pfad path als 2D Array um die Reihenfolge der Schritte des Springers zu speichern
     private final int[][] path;
 
