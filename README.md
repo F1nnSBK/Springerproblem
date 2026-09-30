@@ -3,7 +3,9 @@
 Ein interaktives Lehr- und Übungsprojekt für Studierende und Programmieranfänger:innen.  
 Hier lernst du, wie man eines der berühmtesten Probleme der Informatik und Mathematik mit **rekursivem Backtracking** löst und das Ergebnis mit **Java Swing** grafisch auf einem Schachbrett darstellt.
 
-![Springerproblem Visualisierung](./knights_tour.svg)
+<p align="center">
+  <img src="knights_tour.svg" alt="Springerproblem Visualisierung" width="480">
+</p>
 
 ---
 
@@ -70,7 +72,7 @@ Statt 8 verschachtelte `if`-Abfragen zu schreiben, nutzt man in der Praxis zwei 
 int[] xMoves = { 1,  2, 2, 1, -1, -2, -2, -1};
 int[] yMoves = {-2, -1, 1, 2,  2,  1, -1, -2};
 ```
-Der $i$-te mögliche Zug von `(row, col)` aus lautet dann einfach:
+Der i-te mögliche Zug von `(row, col)` aus lautet dann einfach:
 ```java
 int nextRow = row + xMoves[i];
 int nextCol = col + yMoves[i];
@@ -147,23 +149,23 @@ java -cp bin schachbrett.Schachbrett
 ## Wichtige Tipps und Hintergrundwissen
 
 ### Performance-Falle: Vorsicht mit `System.out.println`
-* Bei naivem Backtracking auf $8 \times 8$ Feldern probiert der Computer **über 3,2 Millionen Schritte** aus.
+* Bei naivem Backtracking auf 8x8 Feldern probiert der Computer **über 3,2 Millionen Schritte** aus.
 * Wer in der inneren Rekursionsschleife bei jedem Fehltritt eine Ausgabe (`System.out.println`) macht, bremst das Programm dramatisch aus: Das Drucken auf der Konsole dauert mehrere Minuten und kann deine IDE einfrieren lassen!
 * **Ohne Konsolenausgabe** in der Schleife löst derselbe Java-Code das Problem in **nur ~40 Millisekunden**! In `Springer.java` gibt es dafür das Flag `DEBUG = false`.
 
-### Zum Ausprobieren: Starte klein ($5 \times 5$ oder $6 \times 6$)
+### Zum Ausprobieren: Starte klein (5x5 oder 6x6)
 Um deinen Code Schritt für Schritt mit dem Debugger nachzuvollziehen:
-* Setze `N = 5` in `Schachbrett.java`: Das $5 \times 5$ Brett wird in ca. 40 Schritten fast augenblicklich gelöst!
-* *Fun Fact:* Auf einem $4 \times 4$ Schachbrett gibt es mathematisch bewiesen **keine** vollständige Lösung für das Springerproblem.
+* Setze `N = 5` in `Schachbrett.java`: Das 5x5 Brett wird in ca. 40 Schritten fast augenblicklich gelöst!
+* *Fun Fact:* Auf einem 4x4 Schachbrett gibt es mathematisch bewiesen **keine** vollständige Lösung für das Springerproblem.
 
 ### Bonus-Challenge: Die Warnsdorff-Heuristik
-Warum läuft sich der Springer auf $8 \times 8$ überhaupt 3 Millionen Mal fest?  
+Warum läuft sich der Springer auf 8x8 überhaupt 3 Millionen Mal fest?  
 Weil er zu Beginn oft in die Mitte springt und dabei Felder belegt, die er später dringend bräuchte, um aus den Ecken wieder herauszukommen (eine Ecke hat nur 2 Fluchtwege!).
 
 **Die Warnsdorff-Regel (1823):**
 > *Wähle als nächsten Zug immer das freie Feld, das seinerseits die **geringste Anzahl an noch freien Folgezügen** besitzt ("Besuche die einsamsten Felder zuerst").*
 
-Wenn du diese Sortierung einbaust, findet dein Algorithmus die Lösung auf $8 \times 8$ fast **ohne einen einzigen Fehlschritt** in weniger als 5 Millisekunden!
+Wenn du diese Sortierung einbaust, findet dein Algorithmus die Lösung auf 8x8 fast **ohne einen einzigen Fehlschritt** in weniger als 5 Millisekunden!
 
 ---
 
