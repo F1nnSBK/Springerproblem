@@ -3,7 +3,7 @@
 Ein interaktives Lehr- und Übungsprojekt für Studierende und Programmieranfänger:innen.  
 Hier lernst du, wie man eines der berühmtesten Probleme der Informatik und Mathematik mit **rekursivem Backtracking** löst und das Ergebnis mit **Java Swing** grafisch auf einem Schachbrett darstellt.
 
-![Springerproblem Visualisierung](knights_tour.svg)
+![Springerproblem Visualisierung](./knights_tour.svg)
 
 ---
 
