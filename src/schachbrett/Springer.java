@@ -16,6 +16,9 @@ public class Springer {
     // Erstellt das 2D path Array basierend auf der Schachbrettgröße
     private static final int[][] path = new int[Schachbrett.N*Schachbrett.N][2];
     static int counter = 0;
+    // Debug-Schalter: Auf true setzen, um jeden Backtracking-Fehltritt zu loggen.
+    // Standardmäßig false, da 3,2+ Mio. Konsolenausgaben das Programm massiv verlangsamen.
+    private static final boolean DEBUG = false;
 
     /**
      * Dient als Konstruktor
@@ -175,7 +178,7 @@ public class Springer {
                     // Wenn der nächste Schritt nicht gültig ist, wird ein Schritt zurückgegangen (Backtracking)
                     board[x][y] = -1;
 
-                    if (moveCount < (N*N)-1) {
+                    if (DEBUG && moveCount < (N*N)-1) {
                         System.out.println("Ich bin falsch gelaufen " + counter);
                         counter = counter + 1;
                     }
