@@ -4,7 +4,7 @@ Ein interaktives Lehr- und Übungsprojekt für Studierende und Programmieranfän
 Hier lernst du, wie man eines der berühmtesten Probleme der Informatik und Mathematik mit **rekursivem Backtracking** löst und das Ergebnis mit **Java Swing** grafisch auf einem Schachbrett darstellt.
 
 <p align="center">
-  <img src="knights_tour.svg" alt="Springerproblem Visualisierung" width="480">
+  <img src="knights_tour.png" alt="Springerproblem Visualisierung" width="480">
 </p>
 
 ---
@@ -115,7 +115,7 @@ Springerproblem/
 │   └── schachbrett/
 │       ├── Springer.java      # Berechnungslogik & Backtracking (Musterlösung)
 │       └── Schachbrett.java   # Swing-GUI: Zeichnet Brett und roten Pfad
-├── knights_tour.svg           # Fertige Vektorgrafik der Lösung zur Veranschaulichung
+├── knights_tour.png           # Fertige Visualisierung der Lösung (PNG)
 ├── Springerproblem.iml        # IntelliJ IDEA Projektdatei
 └── README.md                  # Projekt- und Aufgabenbeschreibung
 ```
